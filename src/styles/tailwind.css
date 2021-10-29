@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.cursive {
-	font-family: 'Great Vibes', cursive;
+.button {
+	@apply text-sm border border-gray-800 text-gray-800 px-4 py-2 uppercase hover:bg-gray-800 hover:text-white transition-all;
 }

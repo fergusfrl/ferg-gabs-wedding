@@ -1,5 +1,6 @@
 import preprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-netlify';
+import { imagetools } from 'vite-imagetools';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,7 +12,10 @@ const config = {
 		// hydrate the <div id="svelte"> element in src/app.html
 		adapter: adapter(),
 		target: '#svelte'
-	}
+	},
+	vite: () => ({
+		plugins: [imagetools({ force: true })]
+	})
 };
 
 export default config;
