@@ -25,6 +25,15 @@ module.exports = {
 				}
 			]
 		},
+		colors: {
+			...defaultTheme.colors,
+			autumn: {
+				100: '#c5b9a3',
+				200: '#9f8c67',
+				400: '#745e34',
+				500: '#4e3b21'
+			}
+		},
 		extend: {}
 	},
 	variants: {
