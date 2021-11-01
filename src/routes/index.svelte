@@ -28,11 +28,11 @@
 	</div>
 	<img src={image} alt="Lake Ohau with Wedding Arch" class="pt-10 py-5" />
 	<h4 class="font-serif pt-6 uppercase">are delighted to invite you to their wedding on</h4>
-	<h3 class="font-cursive text-5xl text-autumn-500">01 . 05 . 2023</h3>
-	<div class="flex flex-col items-center pt-4 pb-20">
-		<h4 class="font-serif uppercase">82 Simeon Street, Spreydon,</h4>
-		<h4 class="font-serif uppercase">Christchruch, 8024</h4>
-		<button class="button mt-5" on:click={handleMapClick}>View on map</button>
+	<h3 class="font-cursive text-5xl text-autumn-500">06 . 05 . 2023</h3>
+	<div class="flex flex-col items-center pt-4 pb-20 space-y-4">
+		<h4 class="font-serif uppercase">Lake Ōhau Lodge</h4>
+		<h4 class="font-serif uppercase mt-5">2295 Lake Ōhau Road, Canterbury</h4>
+		<button class="button" on:click={handleMapClick}>View on map</button>
 	</div>
 	<!-- <RsvpForm /> -->
 </div>
