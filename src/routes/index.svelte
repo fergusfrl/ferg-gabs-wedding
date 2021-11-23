@@ -3,7 +3,7 @@
 	import { GOOGLE_MAPS_LINK } from '../constants';
 	import image from '../assets/lake-ohau-lodge-wedding.jpeg';
 
-	// import RsvpForm from '../components/rsvp-form.svelte';
+	import RsvpForm from '../components/rsvp-form.svelte';
 
 	const handleMapClick = (): void => {
 		window.open(GOOGLE_MAPS_LINK, '_blank');
@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<title>Invitation</title>
+	<title>Celebrate With Us</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
 	<link
@@ -31,8 +31,8 @@
 	<h3 class="font-cursive text-5xl text-autumn-500">06 . 05 . 2023</h3>
 	<div class="flex flex-col items-center pt-4 pb-20 space-y-4">
 		<h4 class="font-serif uppercase">Lake Ōhau Lodge</h4>
-		<h4 class="font-serif uppercase mt-5">2295 Lake Ōhau Road, Canterbury</h4>
+		<h4 class="font-serif uppercase pb-4">2295 Lake Ōhau Road, Canterbury</h4>
 		<button class="button" on:click={handleMapClick}>View on map</button>
 	</div>
-	<!-- <RsvpForm /> -->
+	<RsvpForm />
 </div>

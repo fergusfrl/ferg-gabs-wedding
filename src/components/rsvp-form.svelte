@@ -1,81 +1,51 @@
 <script lang="ts">
-	let name = '';
-	let attendance = false;
-	let dietry = false;
-	let dietryDescription = '';
-	let accomadation = false;
+	import { fade } from 'svelte/transition';
+	import { formValues } from '../state/formValues';
+
+	import arrow from '../assets/arrow.svg';
+	import FormWrapper from './form-wrapper.svelte';
+	import FormOne from './form-one.svelte';
+
+	var formIndex = 0;
+
+	const handleNavigation = (nav: number): void => {
+		formIndex + nav;
+	};
 
 	const handleFormSubmission = (e): void => {
-		console.log({
-			name,
-			attendance,
-			dietry,
-			dietryDescription,
-			accomadation
-		});
+		console.log($formValues);
 	};
 </script>
 
 <h5 class="text-xl font-serif text-autumn-500">RSVP</h5>
-<p class="font-serif uppercase">Please RSVP by 30th August 2020 and fill in one per invitee.</p>
-<form class="flex flex-col items-center space-y-10 font-serif">
-	<div class="form-item">
-		<label for="name">What's your name?</label>
-		<input type="text" name="name" bind:value={name} required class="border border-gray-500" />
-	</div>
-	<div class="form-item">
-		<p>Will you be coming?</p>
-
-		<label>
-			<input type="radio" bind:group={attendance} name="attendance" value={1} />
-			Yes, I can attend
-		</label>
-
-		<label>
-			<input type="radio" bind:group={attendance} name="attendance" value={0} />
-			No, I cannot attend
-		</label>
-	</div>
-	{#if attendance}
-		<div class="form-item">
-			<p>Do you have any dietry requirements?</p>
-
-			<label>
-				<input type="radio" bind:group={dietry} name="dietry" value={1} />
-				Yes
-			</label>
-
-			<label>
-				<input type="radio" bind:group={dietry} name="dietry" value={0} />
-				No
-			</label>
-		</div>
-		{#if dietry}
-			<div class="form-item">
-				<label for="dietryDescription">What are you requirements?</label>
-				<input
-					type="text"
-					name="dietryDescription"
-					bind:value={dietryDescription}
-					class="border border-gray-500"
-				/>
-			</div>
+<p class="font-serif uppercase">Please RSVP by 30th August 2022 and fill in one per invitee.</p>
+<form class="form flex-col justify-between" on:submit|preventDefault={handleFormSubmission}>
+	<FormWrapper>
+		{#if formIndex === 0}
+			<FormOne bind:name={$formValues.name} bind:attendance={$formValues.attendance} />
+		{:else if formIndex === 1}
+			<p>Form Two</p>
+		{:else if formIndex === 2}
+			<p>Form three</p>
 		{/if}
-		<div class="form-item">
-			<p>Will you need accomadation?</p>
+	</FormWrapper>
+	<div class="flex justify-between w-72 h-2">
+		<img
+			src={arrow}
+			alt="Previous arrow"
+			class="transform scale-125 cursor-pointer hover:scale-150 duration-500 rotate-180"
+			on:click={() => handleNavigation(-1)}
+		/>
 
-			<label>
-				<input type="radio" bind:group={accomadation} name="accomadation" value={1} />
-				Yes, book me a room at Ohau Lodge
-			</label>
-
-			<label>
-				<input type="radio" bind:group={accomadation} name="accomadation" value={0} />
-				No, I will manage my own accomadation
-			</label>
-		</div>
-	{/if}
-	<button type="submit" class="button" on:click|preventDefault={handleFormSubmission}
-		>Send RSVP</button
-	>
+		<img
+			src={arrow}
+			alt="Next arrow"
+			class="transform scale-125 duration-500 cursor-pointer hover:scale-150"
+			on:click={() => handleNavigation(1)}
+		/>
+	</div>
 </form>
+
+<button type="submit" class="button" transition:fade on:click|preventDefault={handleFormSubmission}
+	>Send RSVP</button
+>
