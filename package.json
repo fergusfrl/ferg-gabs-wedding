@@ -33,5 +33,8 @@
     "vanilla-lazyload": "^17.5.0",
     "vite-imagetools": "^3.4.0-next.7"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@netlify/functions": "^0.10.0"
+  }
 }
