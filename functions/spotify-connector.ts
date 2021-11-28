@@ -6,7 +6,7 @@ const searchSpotify = async (bearerToken, searchString) => {
 
 	console.log('SEARCH_STRING:', searchStringQuery);
 
-	const response = await axios.get(
+	const { data } = await axios.get(
 		`https://api.spotify.com/v1/search?limit=20&type=track&q=${searchStringQuery}`,
 		{
 			headers: {
@@ -15,7 +15,6 @@ const searchSpotify = async (bearerToken, searchString) => {
 			}
 		}
 	);
-	const data = await response.data();
 
 	console.log('DATA:', data);
 
