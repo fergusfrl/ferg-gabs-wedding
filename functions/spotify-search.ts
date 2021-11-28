@@ -12,6 +12,8 @@ const searchSpotify = async (bearerToken, searchString) => {
 		}
 	);
 
+	console.log('DATA:', data);
+
 	return data.songs.tracks.items.map((song) => ({
 		id: song.id,
 		title: song.name,
