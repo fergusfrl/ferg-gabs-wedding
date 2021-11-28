@@ -2,12 +2,8 @@ import { Handler, getSecrets, NetlifySecrets } from '@netlify/functions';
 import axios from 'axios';
 
 const searchSpotify = async (bearerToken, searchString) => {
-	const searchStringQuery = searchString;
-
-	console.log('SEARCH_STRING:', searchStringQuery);
-
 	const { data } = await axios.get(
-		`https://api.spotify.com/v1/search?limit=20&type=track&q=${searchStringQuery}`,
+		`https://api.spotify.com/v1/search?limit=20&type=track&q=${searchString}`,
 		{
 			headers: {
 				Authorization: `Bearer ${bearerToken}`,
@@ -16,16 +12,16 @@ const searchSpotify = async (bearerToken, searchString) => {
 		}
 	);
 
-	console.log('DATA:', data);
-
-	return data;
+	return data.songs.tracks.items.map((song) => ({
+		id: song.id,
+		title: song.name,
+		artist: song.artists.map((artist) => artist.name),
+		album: song.album.name
+	}));
 };
 
 const handler: Handler = async (event) => {
 	const secrets: NetlifySecrets = await getSecrets(event);
-
-	console.log('CONTEXT:', event);
-	console.log('SECRETS:', secrets);
 
 	// Not Authenticated.
 	if (!secrets?.spotify?.isLoggedIn) {
