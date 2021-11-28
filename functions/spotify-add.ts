@@ -1,12 +1,10 @@
 import { Handler, getSecrets, NetlifySecrets } from '@netlify/functions';
 import axios from 'axios';
 
-// https://open.spotify.com/playlist/78puImPMoPJ4wwP5lFQ1Ny?si=8c57c900f19f4513
-
 const PLAYLIST_ID = '78puImPMoPJ4wwP5lFQ1Ny';
 
 const addSongToPlaylist = async (bearerToken, playlistId, trackId) => {
-	const { data } = await axios.post(
+	await axios.post(
 		`https://api.spotify.com/v1/playlists/${playlistId}/tracks?uris=spotify:track:${trackId}`,
 		{},
 		{
@@ -16,10 +14,6 @@ const addSongToPlaylist = async (bearerToken, playlistId, trackId) => {
 			}
 		}
 	);
-
-	console.log('DATA:', data);
-
-	return data;
 };
 
 const handler: Handler = async (event) => {
