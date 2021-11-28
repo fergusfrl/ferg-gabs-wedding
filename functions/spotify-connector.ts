@@ -2,6 +2,9 @@ import { Handler, getSecrets, NetlifySecrets } from '@netlify/functions';
 
 const searchSpotify = async (bearerToken, searchString) => {
 	const searchStringQuery = searchString;
+
+	console.log('SEARCH_STRING:', searchStringQuery);
+
 	const response = await fetch(
 		`https://api.spotify.com/v1/search?limit=20&q=${searchStringQuery}`,
 		{
