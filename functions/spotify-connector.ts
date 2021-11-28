@@ -1,11 +1,12 @@
 import { Handler, getSecrets, NetlifySecrets } from '@netlify/functions';
+import axios from 'axios';
 
 const searchSpotify = async (bearerToken, searchString) => {
 	const searchStringQuery = searchString;
 
 	console.log('SEARCH_STRING:', searchStringQuery);
 
-	const response = await fetch(
+	const response = await axios.get(
 		`https://api.spotify.com/v1/search?limit=20&q=${searchStringQuery}`,
 		{
 			headers: {
@@ -14,7 +15,7 @@ const searchSpotify = async (bearerToken, searchString) => {
 			}
 		}
 	);
-	const data = await response.json();
+	const data = await response.data();
 
 	console.log('DATA:', data);
 
