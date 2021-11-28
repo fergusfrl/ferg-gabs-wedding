@@ -10,7 +10,7 @@ const searchSpotify = async (bearerToken, searchString) => {
 		`https://api.spotify.com/v1/search?limit=20&q=${searchStringQuery}`,
 		{
 			headers: {
-				Authorization: bearerToken,
+				Authorization: `Bearer: ${bearerToken}`,
 				'Content-Type': 'application/json'
 			}
 		}
