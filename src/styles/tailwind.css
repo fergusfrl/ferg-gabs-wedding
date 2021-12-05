@@ -7,7 +7,8 @@
 }
 
 .form {
-	@apply flex items-center space-y-10 font-serif border border-gray-800 p-10 h-1/5 w-2/4;
+	@apply flex items-center space-y-10 font-serif  p-10;
+	/* border border-gray-800 */
 }
 
 .form-item {

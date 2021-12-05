@@ -2,14 +2,18 @@
 	import { fade } from 'svelte/transition';
 	import { formValues } from '../state/formValues';
 
-	import arrow from '../assets/arrow.svg';
 	import FormWrapper from './form-wrapper.svelte';
+	import Navigation from './navigation.svelte';
 	import FormOne from './form-one.svelte';
+	import FormTwo from './form-two.svelte';
+	import FormThree from './form-three.svelte';
 
 	var formIndex = 0;
 
+	$: canRSVP = formIndex === 0 && $formValues.attendance === 0;
+
 	const handleNavigation = (nav: number): void => {
-		formIndex + nav;
+		formIndex += nav;
 	};
 
 	const handleFormSubmission = (e): void => {
@@ -18,34 +22,36 @@
 </script>
 
 <h5 class="text-xl font-serif text-autumn-500">RSVP</h5>
-<p class="font-serif uppercase">Please RSVP by 30th August 2022 and fill in one per invitee.</p>
+<p class="font-serif uppercase">
+	Please RSVP by 30th August 2022 and fill in <span class="italic">one</span> per invitee.
+</p>
 <form class="form flex-col justify-between" on:submit|preventDefault={handleFormSubmission}>
 	<FormWrapper>
 		{#if formIndex === 0}
 			<FormOne bind:name={$formValues.name} bind:attendance={$formValues.attendance} />
 		{:else if formIndex === 1}
-			<p>Form Two</p>
+			<FormTwo
+				bind:dietry={$formValues.dietry}
+				bind:dietryDescription={$formValues.dietryDescription}
+			/>
 		{:else if formIndex === 2}
-			<p>Form three</p>
+			<FormThree bind:accomadation={$formValues.requiresAccomadation} />
 		{/if}
 	</FormWrapper>
-	<div class="flex justify-between w-72 h-2">
-		<img
-			src={arrow}
-			alt="Previous arrow"
-			class="transform scale-125 cursor-pointer hover:scale-150 duration-500 rotate-180"
-			on:click={() => handleNavigation(-1)}
+	{#if (formIndex === 0 && !canRSVP) || formIndex > 0}
+		<Navigation
+			{formIndex}
+			on:pageBackward={() => handleNavigation(-1)}
+			on:pageForward={() => handleNavigation(1)}
 		/>
-
-		<img
-			src={arrow}
-			alt="Next arrow"
-			class="transform scale-125 duration-500 cursor-pointer hover:scale-150"
-			on:click={() => handleNavigation(1)}
-		/>
-	</div>
+	{/if}
 </form>
 
-<button type="submit" class="button" transition:fade on:click|preventDefault={handleFormSubmission}
-	>Send RSVP</button
->
+{#if canRSVP}
+	<button
+		type="submit"
+		class="button mb-5"
+		transition:fade
+		on:click|preventDefault={handleFormSubmission}>Send RSVP</button
+	>
+{/if}

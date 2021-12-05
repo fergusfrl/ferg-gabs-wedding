@@ -1,15 +1,11 @@
 <script lang="ts">
 	export var name: string;
-	export var attendance: boolean;
-
-	var attending: number | null = null;
-
-	$: attendance = !!attending;
+	export var attendance: number;
 </script>
 
 <div class="space-y-8">
 	<label class="block">
-		<span class="text-gray-400">Name</span>
+		<span class="text-gray-400">Full Name</span>
 		<input
 			type="text"
 			class="form-input mt-1 block w-full"
@@ -26,7 +22,7 @@
 				class="form-checkbox text-black"
 				type="radio"
 				name="attendance"
-				bind:group={attending}
+				bind:group={attendance}
 				value={1}
 			/>
 			Yes, I can attend
@@ -37,7 +33,7 @@
 				class="form-checkbox text-black"
 				type="radio"
 				name="attendance"
-				bind:group={attending}
+				bind:group={attendance}
 				value={0}
 			/>
 			No, I cannot attend
