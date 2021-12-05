@@ -6,6 +6,10 @@
 	@apply text-sm border border-autumn-500 text-autumn-500 px-4 py-2 uppercase hover:bg-autumn-500 hover:text-white transition-all;
 }
 
+.disabled {
+	@apply cursor-default text-gray-600 border-gray-600 hover:bg-white hover:text-gray-600;
+}
+
 .form {
 	@apply flex items-center space-y-10 font-serif  p-10;
 }

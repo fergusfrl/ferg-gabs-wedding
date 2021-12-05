@@ -5,6 +5,18 @@
 <div class="space-y-8">
 	<div class="flex flex-col justify-items-start space-y-2">
 		<p class="text-gray-400">Will you require accomadation?</p>
+		<p class="text-sm">We recommend you arrive on Friday 5th and stay two nights at Ohau Lodge.</p>
+		<label>
+			<input
+				class="form-checkbox text-black"
+				type="radio"
+				name="accomadation"
+				bind:group={accomadation}
+				value={2}
+			/>
+			Friday and Saturday Night (2 Nights)
+		</label>
+
 		<label>
 			<input
 				class="form-checkbox text-black"
@@ -13,7 +25,7 @@
 				bind:group={accomadation}
 				value={1}
 			/>
-			Yes, book me a room at Ohau Lodge
+			Just Saturday Night (1 Night)
 		</label>
 
 		<label>

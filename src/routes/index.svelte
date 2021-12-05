@@ -3,16 +3,6 @@
 	import image from '../assets/lake-ohau-lodge-wedding.jpeg';
 </script>
 
-<svelte:head>
-	<title>Wedding | Gabs and Ferg</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap"
-		rel="stylesheet"
-	/>
-</svelte:head>
-
 <div class="flex flex-col py-14 space-y-5 items-center border-8 border-autumn-100 min-h-screen">
 	<div class="flex flex-col items-center space-x-4 transform -rotate-6 text-autumn-500">
 		<h1 class="font-cursive text-5xl">Gabrielle</h1>
@@ -25,10 +15,14 @@
 	<a
 		href={GOOGLE_MAPS_LINK}
 		target="_blank"
-		class="flex flex-col items-center pt-2 md:pt-4 pb-1- space-y-4 underline hover:no-underline"
+		class="flex flex-col items-center pt-2 md:pt-4 pb-10 space-y-4 underline hover:no-underline"
 	>
 		<h4 class="font-serif uppercase">Lake Ōhau Lodge</h4>
 		<h4 class="font-serif uppercase pb-4">2295 Lake Ōhau Road, Canterbury</h4>
 	</a>
-	<a href="/rsvp" class="button flex flex-row justify-between group">RSVP Here</a>
+
+	<div class="w-2/3 border-t border-autumn-500" />
+
+	<p class="font-serif uppercase pt-10">Please RSVP by 30th August 2022</p>
+	<a href="/rsvp" class="button flex flex-row justify-between group">RSVP & Accomadation</a>
 </div>
