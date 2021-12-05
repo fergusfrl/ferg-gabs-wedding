@@ -29,6 +29,11 @@
 	<h4 class="font-serif pt-6 uppercase">Save the date</h4>
 	<h3 class="font-cursive text-5xl text-autumn-500">06 May, 2023</h3>
 	<img src={image} alt="Lake Ohau with Wedding Arch" class="p-5 md:p-10" />
+	<h4 class="font-serif uppercase pb-8 mx-16 text-center">
+		<span class="font-bold">Location</span>,
+		<span class="font-bold">accomadation</span> & <span class="font-bold">RSVP</span> details coming
+		soon
+	</h4>
 	<h4 class="font-serif uppercase pb-14 mx-16 text-center">We can't wait to celebrate with you</h4>
 	<!-- <h4 class="font-serif pt-6 uppercase">Save the date</h4>
 	<h3 class="font-cursive text-5xl text-autumn-500">06 May, 2023</h3> -->
