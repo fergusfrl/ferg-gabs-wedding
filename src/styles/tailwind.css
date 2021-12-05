@@ -8,7 +8,6 @@
 
 .form {
 	@apply flex items-center space-y-10 font-serif  p-10;
-	/* border border-gray-800 */
 }
 
 .form-item {
