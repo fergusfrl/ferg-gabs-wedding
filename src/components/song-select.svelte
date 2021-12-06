@@ -1,14 +1,17 @@
 <script lang="ts">
-	import axios from 'axios';
 	import { FUNCTIONS_BASE_URL } from '../constants';
 	import Select from 'svelte-select';
 
 	const searchSongs = async (searchString) => {
-		const { data } = await axios.get(
-			`${FUNCTIONS_BASE_URL}/spotify-search?searchString=${searchString}`
+		const result = await fetch(
+			`${FUNCTIONS_BASE_URL}/spotify-search?searchString=${searchString}`,
+			{
+				method: 'GET',
+				mode: 'cors'
+			}
 		);
-		return data;
+		return result.json();
 	};
 </script>
 
-<Select loadOptions={searchSongs} />
+<div class="w-full"><Select loadOptions={searchSongs} /></div>
