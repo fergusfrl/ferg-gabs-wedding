@@ -10,7 +10,10 @@ const addSongToPlaylist = async (bearerToken, playlistId, trackId) => {
 		{
 			headers: {
 				Authorization: `Bearer ${bearerToken}`,
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
+				'Access-Control-Allow-Origin': '*',
+				'Access-Control-Allow-Headers': 'Content-Type',
+				'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE'
 			}
 		}
 	);
