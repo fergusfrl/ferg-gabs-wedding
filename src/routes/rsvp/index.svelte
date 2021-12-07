@@ -8,10 +8,11 @@
 	import { formValues } from '$state/formValues';
 
 	$: canRSVP =
-		$formValues.attendance === 0 ||
-		($formValues.attendance === 1 &&
-			$formValues.dietry !== null &&
-			$formValues.requiresAccomadation !== null);
+		$formValues.name &&
+		($formValues.attendance === 0 ||
+			($formValues.attendance === 1 &&
+				$formValues.dietry !== null &&
+				$formValues.requiresAccomadation !== null));
 
 	const handleSubmit = (): void => {
 		// TODO: send to firebase.
@@ -46,7 +47,7 @@
 
 <div class="w-2/3">
 	<button
-		class="button w-full text-center mb-4 {!canRSVP && 'disabled'}"
+		class="button w-full text-center mb-4 {!canRSVP && 'disabled cursor-not-allowed'}"
 		disabled={!canRSVP}
 		on:click={handleSubmit}>Send RSVP</button
 	>

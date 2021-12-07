@@ -1,5 +1,5 @@
 <script lang="ts">
-	import SongSelect from '$components/song-select.svelte';
+	import SongSelect from '$components/song-select/song-select.svelte';
 </script>
 
 <p class="font-serif uppercase">Sorry you can't make it!</p>
