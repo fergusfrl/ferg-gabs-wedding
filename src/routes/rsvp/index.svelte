@@ -28,7 +28,7 @@
 </script>
 
 <p class="font-serif uppercase mx-20">
-	Please RSVP by 30th August 2022 and fill in <span class="underline">once per person</span>
+	Please RSVP by 30th August 2022 and fill in <span class="font-bold">once per person</span>
 </p>
 
 <form class="flex flex-col w-2/3 space-y-8 text-left">
@@ -47,7 +47,8 @@
 
 <div class="w-2/3">
 	<button
-		class="button w-full text-center mb-4 {!canRSVP && 'disabled cursor-not-allowed'}"
+		class="text-sm border px-4 py-2 uppercase bg-autumn-500 text-white transition-all w-full text-center mb-4 hover:shadow-md {!canRSVP &&
+			'disabled'}"
 		disabled={!canRSVP}
 		on:click={handleSubmit}>Send RSVP</button
 	>

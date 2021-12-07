@@ -2,10 +2,12 @@
 	import SongSelect from '$components/song-select/song-select.svelte';
 </script>
 
-<p class="font-serif uppercase">Sorry you can't make it!</p>
+<p class="font-serif uppercase">We'll miss you 😢</p>
 
 <p class="font-serif">
-	You can still be involved. Please choose a song below to add to the Recpetion playlist 🎉
+	You can still be involved! Help us by choosing a <span class="font-bold italic"
+		>party 🎉 song 🎶</span
+	> to add to the Reception playlist!
 </p>
 
 <SongSelect />

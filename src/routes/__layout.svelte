@@ -1,5 +1,15 @@
-<script>
+<script context="module" lang="ts">
+	export const load = async ({ page }) => ({
+		props: {
+			refresh: page.path
+		}
+	});
+</script>
+
+<script lang="ts">
 	import '../styles/tailwind.css';
+	import { fly } from 'svelte/transition';
+	export let refresh: string | undefined;
 </script>
 
 <svelte:head>
@@ -12,4 +22,8 @@
 	/>
 </svelte:head>
 
-<slot />
+{#key refresh}
+	<div in:fly={{ x: -5, duration: 500, delay: 500 }} out:fly={{ x: 5, duration: 500 }}>
+		<slot />
+	</div>
+{/key}

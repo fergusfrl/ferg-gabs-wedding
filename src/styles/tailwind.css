@@ -7,7 +7,7 @@
 }
 
 .disabled {
-	@apply cursor-default text-gray-600 border-gray-600 hover:bg-white hover:text-gray-600;
+	@apply cursor-not-allowed bg-gray-200;
 }
 
 .form {
