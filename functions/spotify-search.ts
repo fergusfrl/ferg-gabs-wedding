@@ -7,10 +7,7 @@ const searchSpotify = async (bearerToken, searchString) => {
 		{
 			headers: {
 				Authorization: `Bearer ${bearerToken}`,
-				'Content-Type': 'application/json',
-				'Access-Control-Allow-Origin': '*',
-				'Access-Control-Allow-Headers': 'Content-Type',
-				'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTION'
+				'Content-Type': 'application/json'
 			}
 		}
 	);
@@ -39,8 +36,15 @@ const handler: Handler = async (event) => {
 	const bearerToken = secrets.spotify.bearerToken;
 	const songs = await searchSpotify(bearerToken, event.queryStringParameters.searchString);
 
+	const headers = {
+		'Access-Control-Allow-Origin': '*',
+		'Access-Control-Allow-Headers': 'Content-Type',
+		'Access-Control-Allow-Methods': 'GET'
+	};
+
 	return {
 		statusCode: 200,
+		headers,
 		body: JSON.stringify({ songs })
 	};
 };

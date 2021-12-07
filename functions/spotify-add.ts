@@ -10,10 +10,7 @@ const addSongToPlaylist = async (bearerToken, playlistId, trackId) => {
 		{
 			headers: {
 				Authorization: `Bearer ${bearerToken}`,
-				'Content-Type': 'application/json',
-				'Access-Control-Allow-Origin': '*',
-				'Access-Control-Allow-Headers': 'Content-Type',
-				'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE OPTION'
+				'Content-Type': 'application/json'
 			}
 		}
 	);
@@ -35,7 +32,13 @@ const handler: Handler = async (event) => {
 	const bearerToken = secrets.spotify.bearerToken;
 	await addSongToPlaylist(bearerToken, PLAYLIST_ID, event.queryStringParameters.id);
 
-	return { statusCode: 200 };
+	const headers = {
+		'Access-Control-Allow-Origin': '*',
+		'Access-Control-Allow-Headers': 'Content-Type',
+		'Access-Control-Allow-Methods': 'POST, OPTION'
+	};
+
+	return { statusCode: 200, headers };
 };
 
 export { handler };
