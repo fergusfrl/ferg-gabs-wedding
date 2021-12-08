@@ -22,8 +22,10 @@
 	/>
 </svelte:head>
 
-{#key refresh}
-	<div in:fly={{ x: -5, duration: 500, delay: 500 }} out:fly={{ x: 5, duration: 500 }}>
-		<slot />
-	</div>
-{/key}
+<div class="border-8 border-autumn-100 min-h-screen">
+	{#key refresh}
+		<div in:fly={{ x: -5, duration: 500, delay: 500 }} out:fly={{ x: 5, duration: 500 }}>
+			<slot />
+		</div>
+	{/key}
+</div>
