@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 
-	import { FUNCTIONS_BASE_URL } from '../../constants';
+	import { FUNCTIONS_BASE_URL } from '$constants';
 	export let item;
 
 	const handleSongClick = async () => {

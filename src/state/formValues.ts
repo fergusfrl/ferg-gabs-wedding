@@ -3,6 +3,7 @@ import type { Writable } from 'svelte/store';
 
 type FormValues = {
 	name: string;
+	email: string;
 	attendance: number | null;
 	dietry: number | null;
 	dietryDescription: string;
@@ -11,6 +12,7 @@ type FormValues = {
 
 const initialValues: FormValues = {
 	name: '',
+	email: '',
 	attendance: null,
 	dietry: null,
 	dietryDescription: '',

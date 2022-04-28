@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { GOOGLE_MAPS_LINK } from '../constants';
+	import Timeline from '$components/timeline.svelte';
+	import { GOOGLE_MAPS_LINK } from '$constants';
 	import image from '../assets/lake-ohau-lodge-wedding.jpeg';
 </script>
 
@@ -26,5 +27,7 @@
 	<div class="w-2/3 border-t border-autumn-500 pb-10" />
 
 	<a href="/rsvp" class="button flex flex-row justify-between mt-20">RSVP & Accomadation</a>
-	<p class="font-serif uppercase text-sm">Please RSVP by 30th August 2022</p>
+	<p class="font-serif uppercase text-sm">Please RSVP by 30th November 2022</p>
+
+	<!-- <Timeline /> -->
 </div>

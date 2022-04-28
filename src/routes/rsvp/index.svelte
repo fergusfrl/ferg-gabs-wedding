@@ -15,7 +15,6 @@
 				$formValues.requiresAccomadation !== null));
 
 	const handleSubmit = (): void => {
-		// TODO: send to firebase.
 		console.log($formValues);
 
 		if ($formValues.attendance !== 1) {
@@ -27,12 +26,17 @@
 	};
 </script>
 
-<p class="font-serif uppercase mx-20">
-	Please RSVP by 30th August 2022 and fill in <span class="font-bold">once per person</span>
-</p>
+<div>
+	<p class="font-serif uppercase">Please RSVP by 30th November 2022</p>
+	<p class="font-serif">Fill in form one per person</p>
+</div>
 
 <form class="flex flex-col w-2/3 space-y-8 text-left">
-	<AttendanceForm bind:name={$formValues.name} bind:attendance={$formValues.attendance} />
+	<AttendanceForm
+		bind:name={$formValues.name}
+		bind:email={$formValues.email}
+		bind:attendance={$formValues.attendance}
+	/>
 
 	{#if $formValues.attendance}
 		<div transition:slide|local class="space-y-8">

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FUNCTIONS_BASE_URL } from '../../constants';
+	import { FUNCTIONS_BASE_URL } from '$constants';
 	import Select from 'svelte-select';
 	import Item from './song-select-item.svelte';
 

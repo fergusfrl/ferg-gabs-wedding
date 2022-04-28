@@ -22,7 +22,7 @@
 	/>
 </svelte:head>
 
-<div class="border-8 border-autumn-100 min-h-screen">
+<div class="border-8 border-autumn-100 min-h-screen overflow-visible">
 	{#key refresh}
 		<div in:fly={{ x: -5, duration: 500, delay: 500 }} out:fly={{ x: 5, duration: 500 }}>
 			<slot />
