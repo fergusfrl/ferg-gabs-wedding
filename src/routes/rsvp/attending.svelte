@@ -1,7 +1,6 @@
 <script lang="ts">
 	import SongSelect from '$components/song-select/song-select.svelte';
 	import { formValues } from '$state/formValues';
-	import file from "$assets/Gabrielle & Fergus's Wedding Booking Form.pdf";
 </script>
 
 <p class="font-serif uppercase">We Can't wait to see you!</p>
