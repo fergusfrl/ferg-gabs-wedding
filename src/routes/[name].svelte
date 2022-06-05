@@ -17,7 +17,7 @@
 	<h4 class="font-serif uppercase">
 		are <span class="italic">delighted</span> to invite you to their wedding on
 	</h4>
-	<h3 class="font-cursive text-3xl md:text-5xl text-autumn-500">06 May, 2023</h3>
+	<h3 class="font-cursive text-3xl md:text-5xl text-autumn-500">6 May, 2023</h3>
 	<a
 		href={GOOGLE_MAPS_LINK}
 		target="_blank"
