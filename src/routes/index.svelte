@@ -1,10 +1,11 @@
 <script lang="ts">
-	import Timeline from '$components/timeline.svelte';
 	import { GOOGLE_MAPS_LINK } from '$constants';
 	import image from '../assets/lake-ohau-lodge-wedding.jpeg';
+
+	export const prerender = true;
 </script>
 
-<div class="flex flex-col py-14 space-y-5 items-center">
+<div class="flex flex-col py-14 space-y-5 items-center text-center">
 	<div class="flex flex-col items-center space-x-4 transform -rotate-6 text-autumn-500">
 		<h1 class="font-cursive text-5xl">Gabrielle</h1>
 		<h1 class="font-cursive text-3xl">&</h1>

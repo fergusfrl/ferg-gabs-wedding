@@ -34,7 +34,11 @@ module.exports = {
 				500: '#4e3b21'
 			}
 		},
-		extend: {}
+		extend: {
+			listStyleType: {
+				circle: 'circle'
+			}
+		}
 	},
 	variants: {
 		extend: {}

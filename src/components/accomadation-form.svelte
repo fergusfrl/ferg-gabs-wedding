@@ -16,7 +16,7 @@
 				bind:group={accomadation}
 				value={2}
 			/>
-			Friday and Saturday Night at Ohau Lodge (2 Nights)
+			Friday and Saturday Night at Ohau Lodge (2 Nights - Recommended)
 		</label>
 
 		<label>

@@ -15,14 +15,14 @@
 				$formValues.requiresAccomadation !== null));
 
 	const handleSubmit = (): void => {
-		console.log($formValues);
-
-		if ($formValues.attendance !== 1) {
-			goto('/rsvp/not-attending');
-			return;
-		}
-
-		goto('/rsvp/attending');
+		console.log(JSON.stringify($formValues));
+		const postUrl = 'https://us-central1-test-database-200da.cloudfunctions.net/addGuest';
+		fetch(postUrl, {
+			method: 'POST',
+			body: JSON.stringify($formValues)
+		}).then(() => {
+			$formValues.attendance !== 1 ? goto('/rsvp/not-attending') : goto('/rsvp/attending');
+		});
 	};
 </script>
 
