@@ -1,8 +1,3 @@
-<script lang="ts">
-	import SongSelect from '$components/song-select/song-select.svelte';
-	import { formValues } from '$state/formValues';
-</script>
-
 <p class="font-serif uppercase">We Can't wait to see you!</p>
 
 <!-- {#if $formValues.requiresAccomadation} -->
@@ -33,10 +28,8 @@
 	</ul>
 </div>
 
-<!-- {/if} -->
-
-<p class="font-serif">
-	{#if $formValues.requiresAccomadation}In the meantime, help{:else}Help{/if}
-	us by choosing a <span class="font-bold italic">party 🎉 song 🎶</span> to add to the Reception playlist!
+<p>
+	Click <a href="/rsvp/choose-a-song" class="text-blue-500 underline hover:no-underline">here</a>
+	once you've downloaded the accommadation document
 </p>
-<SongSelect />
+<!-- {/if} -->
