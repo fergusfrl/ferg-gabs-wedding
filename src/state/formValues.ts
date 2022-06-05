@@ -7,7 +7,7 @@ type FormValues = {
 	attendance: number | null;
 	dietry: number | null;
 	dietryDescription: string;
-	requiresAccomadation: number | null;
+	requiresAccommodation: number | null;
 };
 
 const initialValues: FormValues = {
@@ -16,7 +16,7 @@ const initialValues: FormValues = {
 	attendance: null,
 	dietry: null,
 	dietryDescription: '',
-	requiresAccomadation: null
+	requiresAccommodation: null
 };
 
 export const formValues: Writable<FormValues> = writable(initialValues);

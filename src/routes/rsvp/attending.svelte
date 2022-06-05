@@ -1,11 +1,11 @@
 <p class="font-serif uppercase">We Can't wait to see you!</p>
 
-<!-- {#if $formValues.requiresAccomadation} -->
+<!-- {#if $formValues.requiresaccommodation} -->
 <div class="border-autumn-400 border p-4">
 	<p class="font-serif uppercase">Important</p>
 	<ul class="list-disc text-left pl-5">
 		<li>
-			<strong>Accomadation:</strong>
+			<strong>accommodation:</strong>
 			<ul class="list-circle pl-10">
 				<li>
 					Please download
@@ -15,7 +15,7 @@
 						download
 						class="text-blue-500 underline hover:no-underline">this document</a
 					>
-					and organize your accomadation directly with Ohau Lodge.
+					and organize your accommodation directly with Ohau Lodge.
 				</li>
 				<li>
 					We recommend emailing or phoning the lodge directly. Credit card details are required to
@@ -30,6 +30,6 @@
 
 <p>
 	Click <a href="/rsvp/choose-a-song" class="text-blue-500 underline hover:no-underline">here</a>
-	once you've downloaded the accommadation document
+	once you've downloaded the accommodation document
 </p>
 <!-- {/if} -->

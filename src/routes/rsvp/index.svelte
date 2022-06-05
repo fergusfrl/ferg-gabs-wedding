@@ -3,7 +3,7 @@
 	import { goto } from '$app/navigation';
 
 	import AttendanceForm from '$components/attendance-form.svelte';
-	import AccomadationForm from '$components/accomadation-form.svelte';
+	import AccommodationForm from '$components/accommodation-form.svelte';
 	import DietryForm from '$components/dietry-form.svelte';
 	import { formValues } from '$state/formValues';
 
@@ -12,7 +12,7 @@
 		($formValues.attendance === 0 ||
 			($formValues.attendance === 1 &&
 				$formValues.dietry !== null &&
-				$formValues.requiresAccomadation !== null));
+				$formValues.requiresAccommodation !== null));
 
 	const handleSubmit = (): void => {
 		console.log(JSON.stringify($formValues));
@@ -44,7 +44,7 @@
 				bind:dietry={$formValues.dietry}
 				bind:dietryDescription={$formValues.dietryDescription}
 			/>
-			<AccomadationForm bind:accomadation={$formValues.requiresAccomadation} />
+			<AccommodationForm bind:accommodation={$formValues.requiresAccommodation} />
 		</div>
 	{/if}
 </form>

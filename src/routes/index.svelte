@@ -27,7 +27,7 @@
 
 	<div class="w-2/3 border-t border-autumn-500 pb-10" />
 
-	<a href="/rsvp" class="button flex flex-row justify-between mt-20">RSVP & Accomadation</a>
+	<a href="/rsvp" class="button flex flex-row justify-between mt-20">RSVP & accommodation</a>
 	<p class="font-serif uppercase text-sm">Please RSVP by 30th November 2022</p>
 
 	<!-- <Timeline /> -->
