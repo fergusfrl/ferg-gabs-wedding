@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .ReactGridGallery_tile-viewport {
-  @apply hover:!bg-none;
+  @apply hover:!bg-none bg-slate-700;
 }

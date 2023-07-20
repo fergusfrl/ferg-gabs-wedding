@@ -2,7 +2,7 @@
 
 import { Gallery as GalleryComponent } from "react-grid-gallery";
 import { ImageProps } from "@/types";
-import ImageComponent from "./ImageComponent";
+import GalleryImage from "./GalleryImage";
 
 type Props = {
   images: ImageProps[];
@@ -12,7 +12,7 @@ const Gallery = ({ images }: Props) => {
   return (
     <GalleryComponent
       images={images}
-      thumbnailImageComponent={ImageComponent}
+      thumbnailImageComponent={GalleryImage}
       enableImageSelection={false}
       rowHeight={300}
     />
