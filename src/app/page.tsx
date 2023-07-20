@@ -11,7 +11,6 @@ export default async function Home() {
       <Hero />
       <div className="m-2">
         <Suspense fallback={<GalleryLoader />}>
-          {/* @ts-expect-error Server Component */}
           <GalleryWrapper />
         </Suspense>
       </div>
