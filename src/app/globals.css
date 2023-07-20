@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ReactGridGallery_tile-viewport {
+  @apply hover:!bg-none;
+}
