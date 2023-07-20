@@ -1,7 +1,7 @@
 import "./globals.css";
-import { Libre_Franklin } from "next/font/google";
+import { Inter } from "next/font/google";
 
-const inter = Libre_Franklin({
+const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-libre-franklin",
