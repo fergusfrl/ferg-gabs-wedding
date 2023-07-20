@@ -1,7 +1,11 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Libre_Franklin } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Libre_Franklin({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-libre-franklin",
+});
 
 export const metadata = {
   title: "Gabrielle and Fergus' Wedding",
