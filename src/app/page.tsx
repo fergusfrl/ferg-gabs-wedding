@@ -9,7 +9,7 @@ export default async function Home() {
   return (
     <main>
       <Hero />
-      <div className="m-2">
+      <div className="m-1">
         <Suspense fallback={<GalleryLoader />}>
           <GalleryWrapper />
         </Suspense>

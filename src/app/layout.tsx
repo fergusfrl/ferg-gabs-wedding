@@ -1,10 +1,10 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Raleway } from "next/font/google";
 
-const inter = Inter({
+const inter = Raleway({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-libre-franklin",
+  variable: "--font-raleway",
 });
 
 export const metadata = {

@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-libre-franklin)"],
+        sans: ["var(--font-raleway)"],
       },
     },
   },

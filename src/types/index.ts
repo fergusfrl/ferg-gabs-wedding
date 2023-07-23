@@ -37,5 +37,7 @@ export type ImageProps = {
   height: number;
   width: number;
   src: string;
+  highQualitySrc: string;
+  nano: string;
   blurUrl?: string;
 };
