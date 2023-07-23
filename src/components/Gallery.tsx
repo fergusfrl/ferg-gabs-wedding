@@ -1,11 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import { Gallery as GalleryComponent } from "react-grid-gallery";
 import Lightbox from "react-image-lightbox";
 import { ImageProps } from "@/types";
 import GalleryImage from "./GalleryImage";
 import "react-image-lightbox/style.css";
-import { useState } from "react";
 
 type Props = {
   images: ImageProps[];

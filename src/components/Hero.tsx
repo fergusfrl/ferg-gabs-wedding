@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HeroImage from "../../public/OhauDrone.jpeg";
+import AnimateIn from "./AnimateIn";
 
 const Hero = () => {
   return (
@@ -20,9 +21,11 @@ const Hero = () => {
           Ōhau Lodge, Lake Ōhau
         </a>
       </div>
-      <h1 className="text-6xl md:text-8xl text-white absolute bottom-6 left-6 font-bold">
-        Gabrielle and Fergus
-      </h1>
+      <AnimateIn>
+        <h1 className="text-6xl md:text-8xl text-white absolute bottom-6 left-6 font-bold">
+          Gabrielle and Fergus
+        </h1>
+      </AnimateIn>
     </div>
   );
 };
